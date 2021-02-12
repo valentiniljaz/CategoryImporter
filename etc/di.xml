@@ -4,7 +4,9 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="ImportCategoriesCommand" xsi:type="object">Macopedia\CategoryImporter\Console\Command\CategoriesCommand</item>
+                <item name="CategoriesImportCsvCommand" xsi:type="object">
+                    Macopedia\CategoryImporter\Console\Command\CategoriesImportCsvCommand
+                </item>
             </argument>
         </arguments>
     </type>

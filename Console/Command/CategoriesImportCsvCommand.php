@@ -15,7 +15,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Magento\Framework\ObjectManagerInterface;
 
-class CategoriesCommand extends Command
+class CategoriesImportCsvCommand extends Command
 {
     /**
      * Object manager factory
@@ -88,6 +88,7 @@ class CategoriesCommand extends Command
      * @param ObjectManagerInterface $objectManager
      * @param \Magento\Framework\File\Csv $fileCsv
      * @param \Magento\Framework\App\Filesystem\DirectoryList $directoryList
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      */
     public function __construct(
         ObjectManagerInterface $objectManager,
@@ -108,8 +109,8 @@ class CategoriesCommand extends Command
      */
     protected function configure()
     {
-        $this->setName('import:categories')
-            ->setDescription('Run category importer script')
+        $this->setName('import:categories_from_csv')
+            ->setDescription('Run category importer script by providing CSV file')
             ->setDefinition([
                 new InputOption(
                     'path',
